@@ -1,1 +1,11 @@
+Task Manager
+A simple Task Management System built using Django that allows users to create, update, delete, and manage tasks with role-based permissions.
 
+Features
+-User Authentication (Login, Register, Logout)
+-Role-Based Access Control (Admin & Standard User)
+-Task Management (Create, Update, Delete, View)
+-Task Categorization (Projects, Priorities, Due Dates)
+-Responsive UI (HTML, CSS, Bootstrap)
+-Database Storage (SQLite)
+-Deployment Ready (PythonAnywhere)
