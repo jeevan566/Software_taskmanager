@@ -1,0 +1,14 @@
+{% extends 'tasks/base_generic.html' %}
+
+{% block content %}
+  <h1>Welcome to the Task Manager</h1>
+  <div class="welcome-message">
+    {% if user.is_authenticated %}
+      <p>Welcome, {{ user.username }}!</p>
+      <p><a href="{% url 'task_list' %}" class="btn">Go to your tasks</a></p>
+    {% else %}
+      <p>Please <a href="{% url 'login' %}" class="btn">login</a> to manage your tasks.</p>
+      <p>Don't have an account? <a href="{% url 'register' %}" class="btn">Register here</a>.</p>
+    {% endif %}
+  </div>
+{% endblock %}
