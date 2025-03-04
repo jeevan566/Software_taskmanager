@@ -2,22 +2,27 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Task(models.Model):
+    # Status choices
     STATUS_CHOICES = [
         ('PENDING', 'Pending'),
         ('IN_PROGRESS', 'In Progress'),
         ('COMPLETED', 'Completed'),
     ]
+
+    # priority choices
     PRIORITY_CHOICES = [
         ('LOW', 'Low'),
         ('MEDIUM', 'Medium'),
         ('HIGH', 'High'),
     ]
 
+    # project categories
     PROJECT_CHOICES = [
         ('RESEARCH', 'Research'),
         ('FINANCE', 'Finance'),
         ('MARKETING', 'Marketing'),
     ]
+
     
     title = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
