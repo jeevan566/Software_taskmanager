@@ -4,10 +4,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from .models import Task
 
-
+# home function
 def home(request):
     return render(request, 'tasks/home.html')
 
+# task list functions (login required)
 @login_required
 def task_list(request):
     if request.user.is_superuser:
@@ -16,6 +17,7 @@ def task_list(request):
         tasks = Task.objects.filter(user=request.user)
     return render(request, 'tasks/task_list.html', {'tasks': tasks})
 
+# task creation functions (login required)
 @login_required
 def create_task(request, task_id=None):
     task = get_object_or_404(Task, pk=task_id) if task_id else None
@@ -55,6 +57,8 @@ def create_task(request, task_id=None):
 
     return render(request, 'tasks/create_task.html', {'task': task})
 
+
+# register functions (login required)
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -66,6 +70,8 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'tasks/register.html', {'form': form})
 
+
+# login functions 
 @login_required
 @user_passes_test(lambda user: user.is_superuser)
 def update_task(request, pk):
@@ -82,6 +88,7 @@ def update_task(request, pk):
         return redirect('task_list')
     return render(request, 'tasks/create_task.html', {'task': task})
 
+# delete functions (login required)
 @login_required
 @user_passes_test(lambda user: user.is_superuser)
 def delete_task(request, pk):
