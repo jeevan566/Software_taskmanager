@@ -24,13 +24,13 @@ class Task(models.Model):
     ]
 
     
-    title = models.CharField(max_length=255)
-    name = models.CharField(max_length=255)
-    description = models.TextField()
-    due_date = models.DateField()
-    priority = models.CharField(max_length=6, choices=PRIORITY_CHOICES, default='LOW')
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
-    project = models.CharField(max_length=20, choices=PROJECT_CHOICES, default='RESEARCH')
+    title = models.CharField(max_length=255) # link to title
+    name = models.CharField(max_length=255) # link to name
+    description = models.TextField() # task desciprtion field
+    due_date = models.DateField() # due date field
+    priority = models.CharField(max_length=6, choices=PRIORITY_CHOICES, default='LOW') # priority field
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING') # status field
+    project = models.CharField(max_length=20, choices=PROJECT_CHOICES, default='RESEARCH') # task category field
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link task to a user
 
     def __str__(self):
