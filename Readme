@@ -1,54 +1,69 @@
+# Task Management System
 
-This is a simple Task Management System built using Django that allows users to create, update, delete, and manage tasks with role-based permissions.
+A Django-based task management application featurs a role-based permissions and user-based task management functionality.
 
-The following are its features:
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-jeevanrai.pythonanywhere.com-blue)](https://jeevanrai.pythonanywhere.com/)
 
-Features
--User Authentication (Login, Register, Logout)
--Role-Based Access Control (Admin & Standard User)
--Task Management (Create, Update, Delete, View)
--Task Categorization (Projects, Priorities, Due Dates)
--Responsive UI (HTML, CSS, Bootstrap)
--Database Storage (SQLite)
--Deployment Ready (PythonAnywhere)
+## Features
 
-1. Super User
- user name: admin
- password: admin
+* User Authentication (Login, Register, Logout)
+* Role-Based Access Control (Admin & Standard User)
+* Task Management (Create, Update, Delete, View)
+* Task Categorization (Projects, Priorities, Due Dates)
+* Responsive UI (HTML, CSS, Bootstrap)
+* Database Storage (SQLite)
+* Deployment Ready (PythonAnywhere)
 
-2. Three Standard Users Login:
+## Test Credentials
 
-User Name: james
-Password : userj12345
+### Super User
+```markdown
+Username: admin
+Password: admin
+```
 
-User Name: claire
-Password : userc12345
+### Standard Users
+```markdown
+User 1:
+Username: james
+Password: userj12345
 
-User Name: Bob
-Password : userb12345
+User 2:
+Username: claire
+Password: userc12345
 
-I used following commands on on Local PC environment:
-The given commands are essential Django management commands used to set up and run a Django project. Here’s what each command does in the given sequence:
+User 3:
+Username: Bob
+Password: userb12345
+```
 
+## Setup Instructions
+
+To set up the project locally, execute these commands in sequence:
+
+### Step 1: Create Database Migrations
+```bash
 py -3.10 manage.py makemigrations
+```
+This command generates migration files based on model changes detected in your Django application.
 
-This command creates migration files based on the changes detected in the models.
-The number 1 indicates its position in the intended execution order.
+### Step 2: Apply Migrations
+```bash
 py -3.10 manage.py migrate
+```
+Applies migrations to ensure your database schema matches your models.
 
-Applies the migrations to the database, ensuring that the database schema matches the models.
-The number 2 shows that it follows after generating migrations.
+### Step 3: Create Admin Account
+```bash
 py -3.10 manage.py createsuperuser
+```
+Sets up a superuser account for Django admin panel access.
 
-Creates a superuser account to access the Django admin panel.
-The number 3 suggests that it is done after applying migrations, as the user model needs to exist in the database.
+### Step 4: Start Development Server
+```bash
 py -3.10 manage.py runserver
-
-Starts the Django development server, making the application accessible via http://127.0.0.1:8000/ by default.
-The number 4 indicates that it is the final step after setting up the database and creating a superuser. But ensure that all libraries are installed correctly.
-
-Please See report where deployment link is present, for easy access to application.
+```
+Launches the development server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 
-
-
+Thank you.
