@@ -45,7 +45,10 @@ The number 3 suggests that it is done after applying migrations, as the user mod
 py -3.10 manage.py runserver
 
 Starts the Django development server, making the application accessible via http://127.0.0.1:8000/ by default.
-The number 4 indicates that it is the final step after setting up the database and creating a superuser.
+The number 4 indicates that it is the final step after setting up the database and creating a superuser. But ensure that all libraries are installed correctly.
+
+Please See report where deployment link is present, for easy access to application.
+
 
 
 
