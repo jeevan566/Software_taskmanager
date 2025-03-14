@@ -1,3 +1,4 @@
+##Jeevan Project Material##
 from django.urls import path  # Import the path function to define URL patterns
 from django.contrib.auth.views import LoginView, LogoutView  # Import built-in authentication views
 from . import views  # Import views from the current app
